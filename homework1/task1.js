@@ -1,9 +1,3 @@
-function checkLength(num) {
-  if (num > 5 || num < 1) {
-    throw new Error();
-  }
-}
-
 class Game {
   constructor() {
     this.abs = 5;
@@ -11,20 +5,26 @@ class Game {
     this.stabilityControl = 5;
   }
 
+  static checkLength(num) {
+    if (num > 5 || num < 1) {
+      throw new Error('out of diapason');
+    }
+  }
+
   setABS(num) {
-    checkLength(num);
+    Game.checkLength(num);
     this.abs = num;
     console.log(`ABS:${num}`);
   }
 
   setTraction(num) {
-    checkLength(num);
+    Game.checkLength(num);
     this.tractionControl = num;
     console.log(`Traction Control:${num}`);
   }
 
   setStability(num) {
-    checkLength(num);
+    Game.checkLength(num);
     this.stabilityControl = num;
     console.log(`Stability Control:${num}`);
   }
