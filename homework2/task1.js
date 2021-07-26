@@ -4,20 +4,20 @@ function bulbs(lamps, lampsArray) {
     currentArray.push(i);
   }
   lampsArray.forEach((item) => {
-    for (let i = item; i <= currentArray[currentArray.length - 1]; i += item) {
-      if (typeof currentArray[i - 1] === 'string') {
-        currentArray[i - 1] = +currentArray[i - 1];
+    for (let i = item; i <= currentArray.length; i += item) {
+      if (currentArray[i - 1] === false) {
+        currentArray[i - 1] = true;
       } else {
-        currentArray[i - 1] = `${currentArray[i - 1]}`;
+        currentArray[i - 1] = false;
       }
     }
   });
-  return currentArray.reduce((sum, current) => {
-    if (typeof current === 'string') {
-      return sum + 1;
+  return currentArray.filter((item) => {
+    if (item === false) {
+      return true;
     }
-    return sum;
-  }, 0);
+    return false;
+  }).length;
 }
 console.log(bulbs(172, [19, 2, 7, 13, 40, 23, 16, 1, 45, 9]));
 console.log(bulbs(20, [2, 3, 8]));
