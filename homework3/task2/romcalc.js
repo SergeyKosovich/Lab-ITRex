@@ -10,7 +10,7 @@ class RomCalc extends Calc {
   romain(num) {
     let number = num;
     if (number < 0) {
-      throw new Error('works for >0 result only');
+      return 'works for 0>result only';
     }
     const numbers = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000];
     const numbersRom = ['I', 'IV', 'V', 'IX', 'X', 'XI', 'I', 'XC', 'C', 'CD', 'D', 'CM', 'M'];

@@ -1,32 +1,24 @@
-class Calc {
-  converter(number) {
-    if (this.format === 'romain') {
-      return this.romain(number);
-    }
-    if (this.format === 'morze') {
-      return this.morze(number);
-    }
-    return number;
-  }
+const Converter = require('./converter');
 
+class Calc extends Converter {
   sum(a, b) {
     const sum = a + b;
-    return this.converter(sum);
+    return this.convert(sum);
   }
 
   divide(a, b) {
     const divide = a / b;
-    return this.converter(divide);
+    return this.convert(divide);
   }
 
   multiply(a, b) {
     const multiply = a * b;
-    return this.converter(multiply);
+    return this.convert(multiply);
   }
 
   subtract(a, b) {
     const subtract = a - b;
-    return this.converter(subtract);
+    return this.convert(subtract);
   }
 }
 module.exports = Calc;

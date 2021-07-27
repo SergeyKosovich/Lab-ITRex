@@ -7,14 +7,7 @@ class RemoveNumbers extends StringFormatter {
   }
 
   removeNonUniqueChars(string) {
-    const stringInArr = string.split('');
-    const acc = [];
-    for (let i = 0; i < stringInArr.length; i += 1) {
-      if (!stringInArr[i].match(this.needToDelete)) {
-        acc.push(stringInArr[i]);
-      }
-    }
-    return acc.join('');
+    return string.split(this.needToDelete).join('');
   }
 }
 module.exports = RemoveNumbers;

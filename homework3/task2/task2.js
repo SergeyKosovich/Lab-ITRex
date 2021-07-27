@@ -11,7 +11,7 @@ const romain = new RomCalc();
 console.log(romain.sum(10, 10));
 console.log(romain.divide(10, 10));
 console.log(romain.multiply(10, 10));
-console.log(romain.subtract(100, 1));
+console.log(romain.subtract(100, 10));
 const morze = new MorzeCalc();
 console.log(morze.sum(10, 1));
 console.log(morze.divide(10, 2));
