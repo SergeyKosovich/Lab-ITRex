@@ -20,5 +20,8 @@
     "hooks": {
       "pre-commit": "npm run lint"
     }
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.1"
   }
 }
