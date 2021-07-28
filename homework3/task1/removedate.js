@@ -11,8 +11,8 @@ class RemoveDate extends StringFormatter {
 
   removeNonUniqueChars(string) {
     let acc = string;
-    this.needToDelete.forEach((item) => {
-      acc = acc.replace(item, '');
+    this.needToDelete.forEach((reg) => {
+      acc = acc.replace(reg, '');
     });
     return acc;
   }
