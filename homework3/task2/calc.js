@@ -1,24 +1,20 @@
-const Converter = require('./converter');
-
-class Calc extends Converter {
+/* eslint class-methods-use-this: ["error", { "exceptMethods":
+["sum", "divide", "multiply", "subtract"] }] */
+class Calc {
   sum(a, b) {
-    const sum = a + b;
-    return this.convert(sum);
+    return a + b;
   }
 
   divide(a, b) {
-    const divide = a / b;
-    return this.convert(divide);
+    return a / b;
   }
 
   multiply(a, b) {
-    const multiply = a * b;
-    return this.convert(multiply);
+    return a * b;
   }
 
   subtract(a, b) {
-    const subtract = a - b;
-    return this.convert(subtract);
+    return a - b;
   }
 }
 module.exports = Calc;
