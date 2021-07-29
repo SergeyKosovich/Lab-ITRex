@@ -2,18 +2,18 @@ const fetch = require('node-fetch');
 
 class GetRandomUsers {
   constructor() {
-    this.reqUrl = 'https://randomuser.me/api/?results=';
+    this.reqUrl = 'https://randomuser.me/api/';
   }
 
   async getUsers(num) {
-    if (num) {
-      const a = await fetch(this.reqUrl + num);
-      const data = await a.json();
-      console.log(data.results);
-    } else {
-      console.log('need add number of user ');
+    if (!num) {
+      return 'need add number of user ';
     }
+    const a = await fetch(`${this.reqUrl}?results=${num}`);
+    const data = await a.json();
+    const response = data.results;
+    return response;
   }
 }
 const getFiveUsers = new GetRandomUsers();
-getFiveUsers.getUsers(10);
+getFiveUsers.getUsers(1).then((data) => console.log(data));
